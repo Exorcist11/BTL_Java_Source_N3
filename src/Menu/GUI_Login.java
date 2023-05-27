@@ -4,9 +4,11 @@
  */
 package Menu;
 
+import java.awt.Color;
 import DBEngine.DBEngine;
 import User.User;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +21,6 @@ public class GUI_Login extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Login
      */
-    
     public void readData(){
         DBEngine db = new DBEngine();
         String fileName = "user.txt";
@@ -29,10 +30,13 @@ public class GUI_Login extends javax.swing.JFrame {
             System.out.println(err.toString());
         }
     }
+    
     public GUI_Login() {
         initComponents();
-        readData();
+        getContentPane().setBackground(new Color(242,242,242));
         setTitle("Login");
+        readData();
+        
     }
 
     /**
@@ -44,24 +48,27 @@ public class GUI_Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         inputTK = new javax.swing.JTextField();
         labelMK = new javax.swing.JLabel();
         inputMK = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("ĐĂNG NHẬP");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo_2.jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Tài khoản:");
 
         labelMK.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         labelMK.setText("Mật khẩu:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setText("ĐĂNG NHẬP");
 
         btnLogin.setText("Login");
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -71,52 +78,50 @@ public class GUI_Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo_2.jpg"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(inputTK, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(labelMK)
+                    .addComponent(inputMK))
+                .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel4)
-                .addGap(39, 39, 39)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2)
-                        .addComponent(inputTK)
-                        .addComponent(labelMK)
-                        .addComponent(inputMK, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(10, 10, 10))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnLogin)
-                                .addGap(52, 52, 52)))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addGap(46, 46, 46))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnLogin)
+                        .addGap(88, 88, 88))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(inputTK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(labelMK)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(inputMK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnLogin))
-                    .addComponent(jLabel4))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addComponent(inputMK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addGap(13, 13, 13)
+                .addComponent(btnLogin)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -137,16 +142,24 @@ public class GUI_Login extends javax.swing.JFrame {
                 break;
             }
         }
-
-//        if(isAuthenticated) {
-//            GUI_Menu gui = new GUI_Menu();
-//            gui.setVisible(true);
-//            gui.setLocationRelativeTo(null);
-//            GUI_Login.this.dispose();
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
-//        }
+        
+        if(isAuthenticated) {
+            GUI_Menu gui = new GUI_Menu();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Login.this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    public static String getUserCode() {
+        return userCode;
+    }
+
+    public static String getUserName() {
+        return userName;
+    }
 
     /**
      * @param args the command line arguments
@@ -183,13 +196,14 @@ public class GUI_Login extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JPasswordField inputMK;
     private javax.swing.JTextField inputTK;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel labelMK;
     // End of variables declaration//GEN-END:variables
 }
