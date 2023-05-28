@@ -142,6 +142,12 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+
         btnSearh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.jpg"))); // NOI18N
         btnSearh.setText("Search");
         btnSearh.addActionListener(new java.awt.event.ActionListener() {
@@ -491,20 +497,24 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         String typeSearch = cbxSearch.getSelectedItem().toString();
         String src = search.getText();
         ArrayList<User> searchTable = new ArrayList<>();
-        if(typeSearch.equals("Tìm theo tên")){
-            for(User o: listUser) {
-                if(src.toLowerCase().equals(o.getHoTen().toLowerCase().trim())){
-                    searchTable.add(o);
-                }
-            }
+        if(src.equals("")){
+            JOptionPane.showMessageDialog(this, "Nội dung nhập không được để trống","Error",JOptionPane.ERROR_MESSAGE);
         } else {
-            for(User u: listUser) {
-                if(src.toLowerCase().equals(u.getMaNV().toLowerCase().trim())){
-                    searchTable.add(u);
+            if(typeSearch.equals("Tìm theo tên")){
+                for(User o: listUser) {
+                    if(src.toLowerCase().equals(o.getHoTen().toLowerCase().trim())){
+                        searchTable.add(o);
+                    }
+                }
+            } else {
+                for(User u: listUser) {
+                    if(src.toLowerCase().equals(u.getMaNV().toLowerCase().trim())){
+                        searchTable.add(u);
+                    }
                 }
             }
+            loadTable(searchTable);
         }
-        loadTable(searchTable);
     }//GEN-LAST:event_btnSearhActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -519,6 +529,10 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         search.setText("");
         loadTable(listUser);
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments

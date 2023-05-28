@@ -6,6 +6,7 @@ package Menu;
 
 import DBEngine.DBEngine;
 import QuanLyLapTop.LapTopGUI;
+import QuanLyTablet.TabletGUI;
 import User.GUI_ManagerUser;
 import User.User;
 import java.awt.Color;
@@ -90,6 +91,11 @@ public class GUI_Menu extends javax.swing.JFrame {
         btnTablet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Tablet logo.jpg"))); // NOI18N
         btnTablet.setText("Quản lý Tablet");
         btnTablet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTablet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTabletActionPerformed(evt);
+            }
+        });
 
         btnTK.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UserLogo.png"))); // NOI18N
@@ -239,6 +245,13 @@ public class GUI_Menu extends javax.swing.JFrame {
         gui.setLocationRelativeTo(null);
         GUI_Menu.this.dispose();
     }//GEN-LAST:event_btnLaptopActionPerformed
+
+    private void btnTabletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTabletActionPerformed
+        TabletGUI gui = new TabletGUI();
+        gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        GUI_Menu.this.dispose();
+    }//GEN-LAST:event_btnTabletActionPerformed
 
     /**
      * @param args the command line arguments
