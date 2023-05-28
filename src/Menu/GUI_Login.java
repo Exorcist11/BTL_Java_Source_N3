@@ -143,13 +143,17 @@ public class GUI_Login extends javax.swing.JFrame {
             }
         }
         
-        if(isAuthenticated) {
-            GUI_Menu gui = new GUI_Menu();
-            gui.setVisible(true);
-            gui.setLocationRelativeTo(null);
-            GUI_Login.this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
+        try {
+            if(isAuthenticated) {
+                GUI_Menu gui = new GUI_Menu();
+                gui.setVisible(true);
+                gui.setLocationRelativeTo(null);
+                GUI_Login.this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception err) {
+            System.out.println(err.toString());
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
