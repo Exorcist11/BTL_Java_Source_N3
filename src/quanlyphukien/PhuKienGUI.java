@@ -4,6 +4,8 @@
  */
 package quanlyphukien;
 
+import Menu.GUI_Menu;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,13 +21,15 @@ public class PhuKienGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<PhuKien> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "E:\\PhuKien.txt";
+    String fileName = "PhuKien.txt";
 
     /**
      * Creates new form PhuKienGUI
      */
     public PhuKienGUI() {
         initComponents();
+        getContentPane().setBackground(new Color(242,242,242));
+        setTitle("Quản lý phụ kiện");
         list = PhuKien.generatedPhuKien(20);
         initTable();
         displayData(list);
@@ -66,6 +70,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         btnBackHome = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnExport = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -140,6 +145,11 @@ public class PhuKienGUI extends javax.swing.JFrame {
         });
 
         btnBackHome.setText("BACK HOME");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackHomeActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("EXIT");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +164,9 @@ public class PhuKienGUI extends javax.swing.JFrame {
                 btnExportActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("QUẢN LÝ PHỤ KIỆN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,11 +218,17 @@ public class PhuKienGUI extends javax.swing.JFrame {
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(385, 385, 385)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -250,7 +269,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
                             .addComponent(cbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSearch)
                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -441,6 +460,13 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        GUI_Menu gui = new GUI_Menu();
+        gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        PhuKienGUI.this.dispose();
+    }//GEN-LAST:event_btnBackHomeActionPerformed
+
     public boolean validData() {
         if (txtName.getText().equals("") || txtColor.getText().equals("")
                 || txtType.getText().equals("") || txtYear.getText().equals("")
@@ -534,6 +560,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbSearch;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

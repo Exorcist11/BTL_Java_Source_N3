@@ -21,7 +21,7 @@ public class GUI_Menu extends javax.swing.JFrame {
     DBEngine db = new DBEngine();
     private boolean isAuthenticated = false;
     private String role;
-    String fileName = "D:user.txt";
+    String fileName = "user.txt";
     /**
      * Creates new form GUI_Menu
      */
