@@ -13,16 +13,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author PCLENOVO
  */
-public class quanlylaptopGUI extends javax.swing.JFrame {
+public class LapTopGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<LapTop> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "E:\\PhuKien.txt";
-
+    String fileName = "E:\\Laptop.txt";
     /**
-     * Creates new form quanlylaptopGUI
+     * Creates new form LapTopGUI
      */
-    public quanlylaptopGUI() {
+    public LapTopGUI() {
         initComponents();
         list = LapTop.generatedLapTop(20);
         initTable();
@@ -40,6 +39,23 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnAdd = new javax.swing.JButton();
+        btnExport = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        btnEdit = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
+        txtName = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtColor = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
+        txtType = new javax.swing.JTextField();
+        cbSearch = new javax.swing.JComboBox<>();
         txtYear = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         txtNumber = new javax.swing.JTextField();
@@ -47,30 +63,78 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         btnBackHome = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
-        btnAdd = new javax.swing.JButton();
-        btnExport = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnReset = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtColor = new javax.swing.JTextField();
-        txtPrice = new javax.swing.JTextField();
-        txtType = new javax.swing.JTextField();
-        cbSearch = new javax.swing.JComboBox<>();
-        txtPrice1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtPrice2 = new javax.swing.JTextField();
+        txtPrice1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        txtPrice2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setText("Name");
+
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Color");
+
+        btnAdd.setText("ADD");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        btnExport.setText("EXPORT FILE");
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Type");
+
+        btnEdit.setText("EDIT");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Year");
+
+        btnDelete.setText("DELETE");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Number");
+
+        btnReset.setText("RESET");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Price");
+
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("SEARCH");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -96,114 +160,26 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Table);
 
         btnBackHome.setText("BACK HOME");
-        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackHomeActionPerformed(evt);
-            }
-        });
-
-        btnExit.setText("EXIT");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
-            }
-        });
-
-        btnAdd.setText("ADD");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
-            }
-        });
-
-        btnExport.setText("EXPORT FILE");
-        btnExport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExportActionPerformed(evt);
-            }
-        });
-
-        btnEdit.setText("EDIT");
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
-            }
-        });
-
-        btnDelete.setText("DELETE");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnReset.setText("RESET");
-        btnReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Price");
-
-        jLabel2.setText("Name");
-
-        jLabel3.setText("Color");
-
-        jLabel4.setText("Type");
-
-        jLabel5.setText("Year");
-
-        jLabel6.setText("Number");
-
-        txtPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPriceActionPerformed(evt);
-            }
-        });
 
         jLabel9.setText("Chip");
 
-        txtPrice2.addActionListener(new java.awt.event.ActionListener() {
+        txtPrice1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrice2ActionPerformed(evt);
+                txtPrice1ActionPerformed(evt);
             }
         });
 
         jLabel10.setText("Ram");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel1.setText("Quản Lý LapTop");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtYear, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtType, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtColor, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(txtPrice)
-                                    .addComponent(txtPrice1)
-                                    .addComponent(txtPrice2)))
                             .addComponent(btnReset)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,26 +196,42 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(btnSearch)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnSearch)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtPrice2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(txtYear, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(txtType, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(txtColor, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(txtPrice)
+                                        .addComponent(txtPrice1)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(351, 351, 351))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -266,14 +258,14 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPrice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
+                            .addComponent(jLabel9)
+                            .addComponent(txtPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtPrice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd)
@@ -288,15 +280,126 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
                             .addComponent(cbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSearch)
                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                    .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        if (!validData()) {
+            return;
+        }
+        int id = list.get(list.size() - 1).getId() + 1;
+        String name = txtName.getText().trim();
+        String color = txtColor.getText().trim();
+        String type = txtType.getText().trim();
+        int year = Integer.parseInt(txtYear.getText().trim());
+        int number = Integer.parseInt(txtNumber.getText().trim());
+        int cost = Integer.parseInt(txtPrice.getText().trim());
+        String chip = txtPrice1.getText().trim();
+        String ram = txtPrice2.getText().trim();
+        LapTop p = new LapTop(id, name, color, type, year, number, cost,chip,ram);
+        list.add(p);
+        displayData(list);
+        JOptionPane.showMessageDialog(rootPane, "Them thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+
+        emptyField();
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+        // TODO add your handling code here:
+        try{
+            for(LapTop p: list){
+                file.saveFile(fileName, p);
+            }
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
+
+    }//GEN-LAST:event_btnExportActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+        if (!validData()) {
+            return;
+        }
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan sua thong tin", "Question", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
+            emptyField();
+            return;
+        }
+        int editIndex = Table.getSelectedRow();
+
+        int id = (Integer) Table.getValueAt(editIndex, 0);
+        String name = txtName.getText().trim();
+        String color = txtColor.getText().trim();
+        String type = txtType.getText().trim();
+        int year = Integer.parseInt(txtYear.getText().trim());
+        int number = Integer.parseInt(txtNumber.getText().trim());
+        int price = Integer.parseInt(txtPrice.getText().trim());
+        String chip = txtPrice1.getText().trim();
+        String ram = txtPrice2.getText().trim();
+        for (LapTop p : list) {
+            if (p.getId() == id) {
+                p.setName(name);
+                p.setColor(color);
+                p.setType(type);
+                p.setYear(year);
+                p.setNumber(number);
+                p.setPrice(price);
+                p.setChip(chip);
+                p.setRam(ram);
+                break;
+            }
+        }
+
+        displayData(list);
+        JOptionPane.showMessageDialog(rootPane, "Cap nhat thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+
+        emptyField();
+
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int deleteIndex = Table.getSelectedRow();
+        if (deleteIndex == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Chua chon phan tu can xoa!");
+            return;
+        }
+
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan xoa? ", "Question", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
+            return;
+        }
+        list.remove(deleteIndex);
+        displayData(list);
+        emptyField();
+        JOptionPane.showMessageDialog(rootPane, "Xoa thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        emptyField();
+        displayData(list);
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
@@ -345,124 +448,94 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
         txtYear.setText((String.valueOf((Integer) Table.getValueAt(row, 4))));
         txtNumber.setText((String.valueOf((Integer) Table.getValueAt(row, 5))));
         txtPrice.setText((String.valueOf((Integer) Table.getValueAt(row, 6))));
+        txtPrice1.setText((String) Table.getValueAt(row, 7));
+        txtPrice2.setText((String) Table.getValueAt(row, 8));
+        
     }//GEN-LAST:event_TableMouseClicked
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+    private void txtPrice1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrice1ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btnExitActionPerformed
-
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
-        if (!validData()) {
-            return;
-        }
-        int id = list.get(list.size() - 1).getId() + 1;
-        String name = txtName.getText().trim();
-        String color = txtColor.getText().trim();
-        String type = txtType.getText().trim();
-        int year = Integer.parseInt(txtYear.getText().trim());
-        int number = Integer.parseInt(txtNumber.getText().trim());
-        int cost = Integer.parseInt(txtPrice.getText().trim());
-        LapTop p = new LapTop(id, name, color, type, year, number, cost);
-        list.add(p);
-        displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Them thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
-
-        emptyField();
-    }//GEN-LAST:event_btnAddActionPerformed
-
-    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
-        // TODO add your handling code here:
-        try{
-            for(LapTop p: list){
-                file.saveFile(fileName, p);
-            }
-        }
-        catch(Exception e){
-            e.getMessage();
-        }
-
-    }//GEN-LAST:event_btnExportActionPerformed
-
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
-        if (!validData()) {
-            return;
-        }
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan sua thong tin", "Question", JOptionPane.YES_NO_OPTION);
-        if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
-            emptyField();
-            return;
-        }
-        int editIndex = Table.getSelectedRow();
-
-        int id = (Integer) Table.getValueAt(editIndex, 0);
-        String name = txtName.getText().trim();
-        String color = txtColor.getText().trim();
-        String type = txtType.getText().trim();
-        int year = Integer.parseInt(txtYear.getText().trim());
-        int number = Integer.parseInt(txtNumber.getText().trim());
-        int price = Integer.parseInt(txtPrice.getText().trim());
-        for (LapTop p : list) {
-            if (p.getId() == id) {
-                p.setName(name);
-                p.setColor(color);
-                p.setType(type);
-                p.setYear(year);
-                p.setNumber(number);
-                p.setPrice(price);
-                break;
-            }
-        }
-
-        displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Cap nhat thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
-
-        emptyField();
-
-    }//GEN-LAST:event_btnEditActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-        int deleteIndex = Table.getSelectedRow();
-        if (deleteIndex == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Chua chon phan tu can xoa!");
-            return;
-        }
-
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan xoa? ", "Question", JOptionPane.YES_NO_OPTION);
-        if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
-            return;
-        }
-        list.remove(deleteIndex);
-        displayData(list);
-        emptyField();
-        JOptionPane.showMessageDialog(rootPane, "Xoa thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
-
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
-        emptyField();
-        displayData(list);
-    }//GEN-LAST:event_btnResetActionPerformed
-
-    private void txtPrice2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrice2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrice2ActionPerformed
+    }//GEN-LAST:event_txtPrice1ActionPerformed
 
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
 
-    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBackHomeActionPerformed
-
     /**
      * @param args the command line arguments
      */
+    public void initTable() {
+        String[] columns = {"ID", "Name", "Color", "Type", "Year", "Number", "Cost" ,"Chip", "Ram"};
+        tableModel.setColumnIdentifiers(columns);
+        Table.setModel(tableModel);
+
+    }
+
+    public void displayData(ArrayList<LapTop> list) {
+        tableModel.setRowCount(0);
+        for (LapTop p : list) {
+            tableModel.addRow(new Object[]{
+                p.getId(), p.getName(), p.getColor(), p.getType(), p.getYear(), p.getNumber(), p.getPrice(), p.getChip(), p.getRam()
+            });
+        }
+    }
+
+    public void emptyField() {
+        txtName.setText("");
+        txtColor.setText("");
+        txtType.setText("");
+        txtYear.setText("");
+        txtNumber.setText("");
+        txtPrice.setText("");
+        txtSearch.setText("");
+        txtPrice1.setText("");
+        txtPrice2.setText("");
+    }
+    public boolean validData() {
+        if (txtName.getText().equals("") || txtColor.getText().equals("")
+                || txtType.getText().equals("") || txtYear.getText().equals("")
+                || txtNumber.getText().equals("") || txtPrice.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Khong duoc de trong du lieu!\n");
+            return false;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        try {
+            int year = Integer.parseInt(txtYear.getText());
+            if (year < 2016) {
+                sb.append("Nam phai lon hon 2016\n");
+            }
+        } catch (NumberFormatException e) {
+            sb.append("Nam phai la so nguyen\n");
+        }
+        try {
+            int number = Integer.parseInt(txtNumber.getText());
+            if (number <= 0) {
+                sb.append("So luong phai lon hon 0\n");
+            }
+        } catch (NumberFormatException e) {
+            sb.append("So luong phai la so nguyen\n");
+        }
+        try {
+            int price = Integer.parseInt(txtPrice.getText());
+            if (price < 1000) {
+                sb.append("Gia phai lon hon 1000\n");
+            }
+        } catch (NumberFormatException e) {
+            sb.append("Gia phai la so nguyen\n");
+        }
+        if (sb.length() > 0) {
+            JOptionPane.showMessageDialog(rootPane, sb.toString(), "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+     public void showComboData() {
+        cbSearch.addItem("Search by Name");
+        cbSearch.addItem("Search by Color");
+        cbSearch.addItem("Search by Type");
+        cbSearch.addItem("Search by Year");
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -477,19 +550,21 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(quanlylaptopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LapTopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(quanlylaptopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LapTopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(quanlylaptopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LapTopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(quanlylaptopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LapTopGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new quanlylaptopGUI().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LapTopGUI().setVisible(true);
+            }
         });
     }
 
@@ -504,7 +579,6 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbSearch;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -524,24 +598,4 @@ public class quanlylaptopGUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtType;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
-
-    private void initTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void displayData(ArrayList<LapTop> list) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void showComboData() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void emptyField() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private boolean validData() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

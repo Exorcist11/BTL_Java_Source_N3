@@ -24,7 +24,7 @@ public class LapTop {
     public LapTop() {
     }
 
-    public LapTop(int id, String name, String color, String type, int year, int number, int price) {
+    public LapTop(int id, String name, String color, String type, int year, int number, int price,String chip,String ram) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -129,7 +129,7 @@ public class LapTop {
             int price =  ((int)((Math.random() * 15)+1)*100000);
             String chip = Chip[(int)(Math.random() * Chip.length)];
             String ram = Ram[(int)(Math.random() * Ram.length)];
-            LapTop m = new LapTop(id,name,color,type,year,number,price);
+            LapTop m = new LapTop(id,name,color,type,year,number,price,chip,ram);
             list.add(m);
         }
         return list;
