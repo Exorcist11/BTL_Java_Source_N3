@@ -119,6 +119,12 @@ public class Tablet {
         this.ram = ram;
     }
 
+    @Override
+    public String toString() {
+        return "\tId:" + id + "\tname:" + name + "\tcolor:" + color + "\tcompany:" + company + "\tyear:" + year + "\tnumber:" + number + "\tprice:" + price + "\tchip:" + chip + "\tram:" + ram + "\tscreen:" + screen+"\n";
+    }
+    
+
      public static ArrayList<Tablet> generatedTablet(int n){
         String[] Name = {"Samsung Galaxy Tab S8","Samsung Galaxy Tab S8 Lite","Samsung Galaxy Tab S7","Ipad Pro 11","Ipad Air 5","Xiaomi Pad 5", "Oppo Pad Air", "Huawei Mate 10"};
         String[] Color = {"Đen", "Xanh", "Đỏ", "Vàng", "Trắng"};

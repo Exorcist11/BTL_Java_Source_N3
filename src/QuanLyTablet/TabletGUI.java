@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package QuanLyTablet;
-import QuanLyLapTop.*;
+
 import Menu.GUI_Menu;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -346,14 +346,15 @@ public class TabletGUI extends javax.swing.JFrame {
 
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
-//        try{
-//            for(Tablet p: list){
-//                file.saveFile(fileName, p);
-//            }
-//        }
-//        catch(Exception e){
-//            e.getMessage();
-//        }
+        try{
+            for(Tablet p: list){
+                file.saveFile(fileName, p);
+            }
+            JOptionPane.showMessageDialog(rootPane, "Xuat file thanh cong");
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
 
     }//GEN-LAST:event_btnExportActionPerformed
 

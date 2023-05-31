@@ -448,6 +448,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
             for(PhuKien p: list){
                 file.saveFile(fileName, p);
             }
+            JOptionPane.showMessageDialog(rootPane, "Xuat file thanh cong");
         }
         catch(Exception e){
             e.getMessage();
