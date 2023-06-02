@@ -107,28 +107,28 @@ public class PhuKienGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
-        btnAdd.setText("ADD");
+        btnAdd.setText("Thêm");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnEdit.setText("EDIT");
+        btnEdit.setText("Sửa");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
-        btnDelete.setText("DELETE");
+        btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        btnReset.setText("RESET");
+        btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -137,7 +137,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
 
         jLabel8.setText("Price");
 
-        btnSearch.setText("SEARCH");
+        btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -158,7 +158,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
             }
         });
 
-        btnExport.setText("EXPORT FILE");
+        btnExport.setText("Xuất file");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportActionPerformed(evt);
@@ -325,7 +325,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         PhuKien p = new PhuKien(id, name, color, type, year, number, cost);
         list.add(p);
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Them thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Thêm thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
     }//GEN-LAST:event_btnAddActionPerformed
@@ -334,18 +334,18 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         int deleteIndex = Table.getSelectedRow();
         if (deleteIndex == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Chua chon phan tu can xoa!");
+            JOptionPane.showMessageDialog(rootPane, "Chưa chọn phần tử cần xóa!");
             return;
         }
         
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan xoa? ", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận xóa? ", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             return;
         }
         list.remove(deleteIndex);
         displayData(list);
         emptyField();
-        JOptionPane.showMessageDialog(rootPane, "Xoa thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Xóa thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -354,7 +354,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         if (!validData()) {
             return;
         }
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan sua thong tin", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận sửa thông tin", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             emptyField();
             return;
@@ -381,7 +381,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         }
 
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Cap nhat thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
 
@@ -403,7 +403,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String searchValue = txtSearch.getText().toLowerCase().trim();
         if(searchValue.equals("")){
-            JOptionPane.showMessageDialog(rootPane, "Nhap thong tin can tim kiem","Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Nhập thông tin cần tìm kiếm","Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         String searchOption = (String)cbSearch.getSelectedItem();
@@ -448,7 +448,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
             for(PhuKien p: list){
                 file.saveFile(fileName, p);
             }
-            JOptionPane.showMessageDialog(rootPane, "Xuat file thanh cong");
+            JOptionPane.showMessageDialog(rootPane, "Xuất file thành công");
         }
         catch(Exception e){
             e.getMessage();
@@ -472,34 +472,34 @@ public class PhuKienGUI extends javax.swing.JFrame {
         if (txtName.getText().equals("") || txtColor.getText().equals("")
                 || txtType.getText().equals("") || txtYear.getText().equals("")
                 || txtNumber.getText().equals("") || txtPrice.getText().equals("")) {
-            JOptionPane.showMessageDialog(rootPane, "Khong duoc de trong du lieu!\n");
+            JOptionPane.showMessageDialog(rootPane, "Không được để trống dữ liệu!\n");
             return false;
         }
 
         StringBuilder sb = new StringBuilder();
         try {
             int year = Integer.parseInt(txtYear.getText());
-            if (year < 2016) {
-                sb.append("Nam phai lon hon 2016\n");
+            if (year < 2000) {
+                sb.append("Năm phải lớn hơn 2000\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Nam phai la so nguyen\n");
+            sb.append("Năm phải là số nguyên\n");
         }
         try {
             int number = Integer.parseInt(txtNumber.getText());
             if (number <= 0) {
-                sb.append("So luong phai lon hon 0\n");
+                sb.append("Số lượng phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("So luong phai la so nguyen\n");
+            sb.append("Số lượng phải là số nguyên\n");
         }
         try {
             int price = Integer.parseInt(txtPrice.getText());
-            if (price < 1000) {
-                sb.append("Gia phai lon hon 1000\n");
+            if (price <= 0) {
+                sb.append("Giá phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Gia phai la so nguyen\n");
+            sb.append("Giá phải là số nguyên\n");
         }
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane, sb.toString(), "Error", JOptionPane.ERROR_MESSAGE);
