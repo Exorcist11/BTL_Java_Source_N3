@@ -75,7 +75,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <EmptySpace pref="104" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -194,7 +194,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ADD"/>
+        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
@@ -202,7 +202,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnExport">
       <Properties>
-        <Property name="text" type="java.lang.String" value="EXPORT FILE"/>
+        <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t file"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExportActionPerformed"/>
@@ -215,7 +215,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEdit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="EDIT"/>
+        <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
@@ -228,7 +228,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
-        <Property name="text" type="java.lang.String" value="DELETE"/>
+        <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
@@ -241,7 +241,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnReset">
       <Properties>
-        <Property name="text" type="java.lang.String" value="RESET"/>
+        <Property name="text" type="java.lang.String" value="Reset"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
@@ -280,7 +280,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSearch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SEARCH"/>
+        <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>

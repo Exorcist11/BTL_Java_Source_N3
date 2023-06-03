@@ -110,7 +110,8 @@ public class LapTop {
 
     @Override
     public String toString() {
-        return "LapTop{" + "id=" + id + ", name=" + name + ", color=" + color + ", type=" + type + ", year=" + year + ", number=" + number + ", price=" + price + ", chip=" + chip + ", ram=" + ram + '}';
+       // return "LapTop{" + "id=" + id + ", name=" + name + ", color=" + color + ", type=" + type + ", year=" + year + ", number=" + number + ", price=" + price + ", chip=" + chip + ", ram=" + ram + '}';
+        return "ID: "+id+"\tModel: "+name+"\tColor: "+color+"\tType: "+type+"\tYear: "+year+"\tNumber: "+number+"\tPrice: "+price+"\n";
     }
      public static ArrayList<LapTop> generatedLapTop(int n){
         String[] Name = {"Lenovo","Asus","Dell","Acer","Legion","Macbook"};
