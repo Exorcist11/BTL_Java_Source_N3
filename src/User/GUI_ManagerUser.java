@@ -70,10 +70,10 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
 //                cell.setCellValue(table.getValueAt(i, j).toString());
 //            }
 //        }
-//        FileOutputStream fileOut = new FileOutputStream("San_Pham.xlsx");
+//        FileOutputStream fileOut = new FileOutputStream("User.xlsx");
 //        workbook.write(fileOut);
 //        fileOut.close();
-//        JOptionPane.showMessageDialog(null, "Đã xuất ra file: San_Pham.xlsx");
+//        JOptionPane.showMessageDialog(null, "Đã xuất ra file: User.xlsx");
 //    }
     /**
      * Creates new form GUI_ManagerUser
@@ -122,7 +122,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         chucVu = new javax.swing.JComboBox<>();
-        btnExport = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         backMenu = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
@@ -218,8 +217,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
-        btnExport.setText("Xuất .xsls");
-
         btnUpdate.setText("Sửa");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,15 +253,13 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
+                                .addGap(61, 61, 61)
                                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
+                                .addGap(70, 70, 70)
                                 .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
+                                .addGap(71, 71, 71)
                                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(84, 84, 84)
+                                .addGap(137, 137, 137)
                                 .addComponent(backMenu))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
@@ -348,7 +343,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
-                    .addComponent(btnExport)
                     .addComponent(btnUpdate)
                     .addComponent(btnDel)
                     .addComponent(backMenu)
@@ -397,6 +391,15 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                             break;
                         }
                     }
+                    maNV.setText("");
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setText("");
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
+                    search.setText("");
                 }
             }
         } catch (Exception err) {
@@ -573,7 +576,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
     private javax.swing.JButton backMenu;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
-    private javax.swing.JButton btnExport;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearh;
     private javax.swing.JButton btnUpdate;

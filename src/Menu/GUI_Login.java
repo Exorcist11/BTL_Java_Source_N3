@@ -153,7 +153,8 @@ public class GUI_Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception err) {
-            System.out.println(err.toString());
+            //System.out.println(err.toString());
+            JOptionPane.showMessageDialog(this, "Lỗi đăng nhập!","Error",JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

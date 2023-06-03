@@ -1,0 +1,21 @@
+         1      Dell      Gray Van Phong      2020        27    300000
+         2    Legion      Gray Van Phong      2020        33    400000
+         3      Asus     Black Van Phong      2020        24    500000
+         4      Acer     Black    Gaming      2017         4    100000
+         5    Lenovo       Red Van Phong      2018        44   1300000
+         6    Legion     Black Van Phong      2022        28   1400000
+         7    Lenovo      Gray    Gaming      2019         9    300000
+         8    Lenovo     White    Gaming      2020        27    200000
+         9      Asus      Gray Van Phong      2017        22   1400000
+        10      Acer       Red Van Phong      2020         3    800000
+        11      Acer     White    Gaming      2019        40   1500000
+        12      Acer     Black    Gaming      2021        23    500000
+        13    Legion      Gray    Gaming      2019        22   1500000
+        14      Asus     White Van Phong      2017         8    200000
+        15      Dell     White Van Phong      2019        13    700000
+        16    Legion     Black Van Phong      2018         3    900000
+        17      Dell     Black Van Phong      2018        12    400000
+        18    Lenovo     Black    Gaming      2021         2   1400000
+        19      Dell      Gray Van Phong      2021         8    200000
+        20      Dell      Gray Van Phong      2017        11   1400000
+        21         1      grey van phong      2020         2      2000
