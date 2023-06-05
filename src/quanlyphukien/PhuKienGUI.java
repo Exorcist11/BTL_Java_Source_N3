@@ -144,14 +144,14 @@ public class PhuKienGUI extends javax.swing.JFrame {
             }
         });
 
-        btnBackHome.setText("BACK HOME");
+        btnBackHome.setText("VỀ MENU");
         btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHomeActionPerformed(evt);
             }
         });
 
-        btnExit.setText("EXIT");
+        btnExit.setText("THOÁT");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);

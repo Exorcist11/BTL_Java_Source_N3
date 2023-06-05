@@ -287,7 +287,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnBackHome">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BACK HOME"/>
+        <Property name="text" type="java.lang.String" value="V&#x1ec0; MENU"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackHomeActionPerformed"/>
@@ -295,7 +295,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="EXIT"/>
+        <Property name="text" type="java.lang.String" value="THO&#xc1;T"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
