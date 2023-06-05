@@ -22,7 +22,7 @@ public class GUI_Menu extends javax.swing.JFrame {
     ArrayList<User> listUser;
     DBEngine db = new DBEngine();
     private boolean isAuthenticated = false;
-    private String role;
+    private String role = GUI_Login.getRole();
     String fileName = "user.txt";
     /**
      * Creates new form GUI_Menu
@@ -214,7 +214,6 @@ public class GUI_Menu extends javax.swing.JFrame {
         String code = GUI_Login.getUserCode();
         for(User u : listUser) {
             if(code.equals(u.getMaNV())){
-                role = u.getChucVu();
                 isAuthenticated = true;
                 break;
             }

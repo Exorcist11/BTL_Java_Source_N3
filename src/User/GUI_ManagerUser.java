@@ -388,6 +388,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                             listUser.add(user);
                             db.saveFile(fileName, listUser);
                             loadTable(listUser);
+                            JOptionPane.showMessageDialog(null, "Thêm tài khoản thành công!");
                             break;
                         }
                     }
@@ -403,7 +404,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                 }
             }
         } catch (Exception err) {
-            //System.out.println(err.toString());
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddActionPerformed
@@ -423,17 +423,18 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                     listUser.remove(del);
                     db.saveFile(fileName, listUser);
                     loadTable(listUser);
+                    JOptionPane.showMessageDialog(this, "Xoá thành công!","Information",JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    maNV.setEnabled(true);
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setText("");
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
                 }
-            }
-            maNV.setEnabled(true);
-            maNV.setText("");
-            hoTen.setText("");
-            sdt.setText("");
-            tk.setText("");
-            mk.setText("");
-            queQuan.setText("");
-            ngaySinh.setText("");
-            JOptionPane.showMessageDialog(this, "Xoá thành công!","Information",JOptionPane.INFORMATION_MESSAGE);
+            }            
         } catch (Exception err) {
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
             //System.out.println(err.toString());
@@ -446,27 +447,32 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             if(update == -1) {
                 JOptionPane.showMessageDialog(this, " Chọn tài khoản cần Cập nhật","Error",JOptionPane.ERROR_MESSAGE);
             } else {
-                us = listUser.get(update);
-                us.setHoTen(hoTen.getText());
-                us.setSoDienThoai(sdt.getText());
-                us.setNgaySinh(ngaySinh.getText());
-                us.setQueQuan(queQuan.getText());
-                us.setTaiKhoan(tk.getText());
-                us.setMatKhau(mk.getText());
-                us.setChucVu(chucVu.getSelectedItem().toString());
-                listUser.set(update, us);
-                JOptionPane.showMessageDialog(this, "Cập nhật tài thông tin thành công!","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-                db.saveFile(fileName, listUser);
-                loadTable(listUser);
+                int confirm = JOptionPane.showConfirmDialog(this,"Xác nhận cập nhật tài khoản","Xác nhận",JOptionPane.YES_NO_OPTION);
+                if(confirm == JOptionPane.YES_OPTION){
+                    us = listUser.get(update);
+                    us.setHoTen(hoTen.getText());
+                    us.setSoDienThoai(sdt.getText());
+                    us.setNgaySinh(ngaySinh.getText());
+                    us.setQueQuan(queQuan.getText());
+                    us.setTaiKhoan(tk.getText());
+                    us.setMatKhau(mk.getText());
+                    us.setChucVu(chucVu.getSelectedItem().toString());
+                    listUser.set(update, us);
+                    db.saveFile(fileName, listUser);
+                    loadTable(listUser);
+                    JOptionPane.showMessageDialog(this, "Cập nhật tài thông tin thành công!","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    maNV.setEnabled(true);
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setEnabled(true);
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
+                }
             }
-            maNV.setEnabled(true);
-            maNV.setText("");
-            hoTen.setText("");
-            sdt.setText("");
-            tk.setText("");
-            mk.setText("");
-            queQuan.setText("");
-            ngaySinh.setText("");
+            
         } catch (Exception err) {
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
             //System.out.println(err.toString());
@@ -483,6 +489,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
     private void tableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableUserMouseClicked
         int selected = tableUser.getSelectedRow();
         maNV.setEnabled(false);
+        tk.setEnabled(false);
         if(selected != -1) {
             us = listUser.get(selected);
             maNV.setText(us.getMaNV());
