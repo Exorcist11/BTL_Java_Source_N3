@@ -132,6 +132,12 @@ public class PhuKienGUI extends javax.swing.JFrame {
 
         jLabel8.setText("Price");
 
+        cbSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSearchActionPerformed(evt);
+            }
+        });
+
         btnSearch.setText("SEARCH");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,6 +446,10 @@ public class PhuKienGUI extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void cbSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSearchActionPerformed
 
     public boolean validData() {
         if (txtName.getText().equals("") || txtColor.getText().equals("")

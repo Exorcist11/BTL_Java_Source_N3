@@ -70,50 +70,50 @@ public class LapTopGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Name");
+        jLabel2.setText("Tên");
 
-        btnExit.setText("EXIT");
+        btnExit.setText("Thoát");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Color");
+        jLabel3.setText("Màu");
 
-        btnAdd.setText("ADD");
+        btnAdd.setText("Thêm");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnExport.setText("EXPORT FILE");
+        btnExport.setText("Xuất file");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Type");
+        jLabel4.setText("Loại");
 
-        btnEdit.setText("EDIT");
+        btnEdit.setText("Sửa");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Year");
+        jLabel5.setText("Năm");
 
-        btnDelete.setText("DELETE");
+        btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("Number");
+        jLabel6.setText("Số");
 
         btnReset.setText("RESET");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class LapTopGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Price");
+        jLabel8.setText("Giá");
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +136,13 @@ public class LapTopGUI extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setText("SEARCH");
+        cbSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSearchActionPerformed(evt);
+            }
+        });
+
+        btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -159,7 +165,12 @@ public class LapTopGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
-        btnBackHome.setText("BACK HOME");
+        btnBackHome.setText("Trở lại Home");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackHomeActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Chip");
 
@@ -210,15 +221,14 @@ public class LapTopGUI extends javax.swing.JFrame {
                                 .addGap(41, 41, 41)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtPrice2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                        .addComponent(txtYear, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                        .addComponent(txtType, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                        .addComponent(txtColor, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                        .addComponent(txtPrice)
-                                        .addComponent(txtPrice1)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))
+                                    .addComponent(txtNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(txtYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(txtType, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(txtColor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(txtPrice, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPrice1, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -461,6 +471,14 @@ public class LapTopGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
 
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackHomeActionPerformed
+
+    private void cbSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -531,10 +549,10 @@ public class LapTopGUI extends javax.swing.JFrame {
         return true;
     }
      public void showComboData() {
-        cbSearch.addItem("Search by Name");
-        cbSearch.addItem("Search by Color");
-        cbSearch.addItem("Search by Type");
-        cbSearch.addItem("Search by Year");
+        cbSearch.addItem("Tìm kiếm theo tên");
+        cbSearch.addItem("Tìm kiếm theo màu");
+        cbSearch.addItem("Tìm kiếm theo kiểu");
+        cbSearch.addItem("Tìm kiếm theo năm");
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
