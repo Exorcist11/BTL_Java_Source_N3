@@ -4,20 +4,18 @@
  */
 package User;
 
-import DBEngine.DBEngine;
+import DBEngine.*;
 import Menu.GUI_Menu;
 import java.awt.Color;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-//import org.apache.poi.hssf.usermodel.HSSFFont;
-//import org.apache.poi.ss.usermodel.Cell;
-//import org.apache.poi.ss.usermodel.Row;
-//import org.apache.poi.ss.usermodel.Sheet;
-//import org.apache.poi.ss.usermodel.Workbook;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.File;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.IOException;
+
 
 
 /**
@@ -26,8 +24,9 @@ import java.io.File;
  */
 public class GUI_ManagerUser extends javax.swing.JFrame {
     String fileName = "user.txt";
-    File fName = new File("User.xls");
+    String fName = "User.xlsx";
     DBEngine db = new DBEngine();
+    ExportFileExcel ex = new ExportFileExcel();
     User us = new User();
     ArrayList<User> listUser = new ArrayList<>();
     
@@ -43,36 +42,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         tableUser.setModel(new TableUser(listUser));
     }
     
-//    Workbook workbook = new XSSFWorkbook(); // tạo mới đối tượng đại diện cho excel.
-//    Sheet sheet = (Sheet) workbook.createSheet("User"); // tạo 1 đối tượng sheet, đại diện cho sheet bên trong file Excel
-//    public void ExportFileExcel(JTable table) throws IOException {
-//
-//        // tạo tên cột 
-//        Row headerRow = sheet.createRow(0);
-//        for (int i = 0; i < table.getColumnCount(); i++) {
-//            Cell headerCell = headerRow.createCell(i);
-//            headerCell.setCellValue(table.getColumnName(i));
-//            // tạo font chữ đận cho tên cột 
-//            org.apache.poi.ss.usermodel.Font font = workbook.createFont();
-//            font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
-//            org.apache.poi.ss.usermodel.CellStyle style = workbook.createCellStyle();
-//            style.setFont(font);
-//            headerCell.setCellStyle(style);
-//        }
-//
-//        // thêm dữ liệu trong jtable vào trong file
-//        for (int i = 0; i < table.getRowCount(); i++) {
-//            Row row = sheet.createRow(i + 1);
-//            for (int j = 0; j < table.getColumnCount(); j++) {
-//                Cell cell = row.createCell(j);
-//                cell.setCellValue(table.getValueAt(i, j).toString());
-//            }
-//        }
-//        FileOutputStream fileOut = new FileOutputStream("User.xlsx");
-//        workbook.write(fileOut);
-//        fileOut.close();
-//        JOptionPane.showMessageDialog(null, "Đã xuất ra file: User.xlsx");
-//    }
     /**
      * Creates new form GUI_ManagerUser
      */
@@ -123,6 +92,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         backMenu = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
+        btnExport = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -237,6 +207,13 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
+        btnExport.setText("Export .xlsx");
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,20 +221,19 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61)
+                                .addGap(67, 67, 67)
                                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70)
+                                .addGap(63, 63, 63)
                                 .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71)
+                                .addGap(54, 54, 54)
                                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(137, 137, 137)
+                                .addGap(48, 48, 48)
+                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
                                 .addComponent(backMenu))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
@@ -301,7 +277,10 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                                             .addComponent(jLabel9)
                                             .addGap(18, 18, 18)
                                             .addComponent(chucVu, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(jScrollPane1)))))
+                                .addComponent(jScrollPane1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel1)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -344,7 +323,8 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                     .addComponent(btnUpdate)
                     .addComponent(btnDel)
                     .addComponent(backMenu)
-                    .addComponent(btnReset))
+                    .addComponent(btnReset)
+                    .addComponent(btnExport))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -542,6 +522,16 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchActionPerformed
 
+    Workbook workbook = new XSSFWorkbook(); // tạo mới đối tượng đại diện cho excel.
+    Sheet sheet = (Sheet) workbook.createSheet(fName); // tạo 1 đối tượng sheet, đại diện cho sheet bên trong file Excel
+    private void exportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportExcelActionPerformed
+        try {
+            ex.ExportFileExcel(tableUser, fName);
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex.toString());
+        }
+    }//GEN-LAST:event_exportExcelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -581,6 +571,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
     private javax.swing.JButton backMenu;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnExport;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearh;
     private javax.swing.JButton btnUpdate;

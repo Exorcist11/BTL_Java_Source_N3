@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
  * @author ExorcistV
  */
 public class TableUser extends AbstractTableModel {
-    String title[] = {"MaNV", "Ho ten", "So dien thoai", "Ngay sinh", "Que quan", "Tai khoan", "Mat khau", "Chuc vu"};
+    String title[] = {"Mã nhân viên", "Họ tên", "Số điện thoại", "Ngày sinh", "Quê quán", "Tài khoản", "Mật khẩu", "Chức vụ"};
     Class value[] = {String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class};
     ArrayList<User> listUser = new ArrayList<>();
 

@@ -222,38 +222,54 @@ public class GUI_Menu extends javax.swing.JFrame {
                 break;
             }
         }
+        try {
+            if(isAuthenticated){
+                if(role.equals("Master")){
+                    GUI_ManagerUser gui = new GUI_ManagerUser();
+                    gui.setVisible(true);
+                    gui.setLocationRelativeTo(null);
+                    GUI_Menu.this.dispose(); 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tài khoản master mới có thể truy cập!","Error",JOptionPane.INFORMATION_MESSAGE);
+                }         
+            } 
+        } catch(Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
         
-        if(isAuthenticated){
-            if(role.equals("Master")){
-                GUI_ManagerUser gui = new GUI_ManagerUser();
-                gui.setVisible(true);
-                gui.setLocationRelativeTo(null);
-                GUI_Menu.this.dispose(); 
-            } else {
-                JOptionPane.showMessageDialog(null, "Tài khoản master mới có thể truy cập!","Error",JOptionPane.INFORMATION_MESSAGE);
-            }         
-        } 
     }//GEN-LAST:event_btnTKActionPerformed
 
     private void btnPKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPKActionPerformed
-        PhuKienGUI gui = new PhuKienGUI();
-        gui.setVisible(true);
-        gui.setLocationRelativeTo(null);
-        GUI_Menu.this.dispose();
+        try {
+            PhuKienGUI gui = new PhuKienGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch(Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnPKActionPerformed
 
     private void btnLaptopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaptopActionPerformed
-        LapTopGUI gui = new LapTopGUI();
-        gui.setVisible(true);
-        gui.setLocationRelativeTo(null);
-        GUI_Menu.this.dispose();
+        try {
+            LapTopGUI gui = new LapTopGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch (Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnLaptopActionPerformed
 
     private void btnTabletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTabletActionPerformed
-        TabletGUI gui = new TabletGUI();
-        gui.setVisible(true);
-        gui.setLocationRelativeTo(null);
-        GUI_Menu.this.dispose();
+        try {
+            TabletGUI gui = new TabletGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch (Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnTabletActionPerformed
 
     /**

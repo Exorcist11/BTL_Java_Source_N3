@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import DBEngine.*;
 
 
 /**
@@ -19,6 +20,8 @@ public class LapTopGUI extends javax.swing.JFrame {
     public static ArrayList<LapTop> list = new ArrayList<>();
     DBEngine file = new DBEngine();
     String fileName = "saveTXT/Laptop.txt";
+    ExportFileExcel ex = new ExportFileExcel();
+    String fName = "Laptop.xlsx";
     /**
      * Creates new form LapTopGUI
      */
@@ -337,13 +340,10 @@ public class LapTopGUI extends javax.swing.JFrame {
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
         try{
-            for(LapTop p: list){
-                file.saveFile(fileName, p);
-            }
-            JOptionPane.showMessageDialog(rootPane, "Xuất file thành công");
+            ex.ExportFileExcel(Table, fName);
         }
         catch(Exception e){
-            e.getMessage();
+            JOptionPane.showConfirmDialog(null, ex.toString());
         }
 
     }//GEN-LAST:event_btnExportActionPerformed

@@ -7,21 +7,20 @@ package quanlyphukien;
 import Menu.GUI_Menu;
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import DBEngine.*;
 /**
  *
  * @author pc2
  */
 public class PhuKienGUI extends javax.swing.JFrame {
-
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<PhuKien> list = new ArrayList<>();
     DBEngine file = new DBEngine();
     String fileName = "saveTXT/PhuKien.txt";
+    String fName = "PhuKien.xlsx";
+    ExportFileExcel ex = new ExportFileExcel();
 
     /**
      * Creates new form PhuKienGUI
@@ -445,13 +444,10 @@ public class PhuKienGUI extends javax.swing.JFrame {
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
         try{
-            for(PhuKien p: list){
-                file.saveFile(fileName, p);
-            }
-            JOptionPane.showMessageDialog(rootPane, "Xuất file thành công");
+            ex.ExportFileExcel(Table, fName);
         }
         catch(Exception e){
-            e.getMessage();
+            JOptionPane.showConfirmDialog(null, ex.toString());
         }
         
         
