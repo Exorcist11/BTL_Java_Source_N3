@@ -280,7 +280,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void initTable() {
-        String[] columns = {"ID", "Name", "Color", "Type", "Year", "Number", "Cost"};
+        String[] columns = {"ID", "Tên", "Màu sắc", "Loại phụ kiện", "Năm", "Số lượng", "Giá"};
         tableModel.setColumnIdentifiers(columns);
         Table.setModel(tableModel);
 
@@ -408,25 +408,25 @@ public class PhuKienGUI extends javax.swing.JFrame {
         }
         String searchOption = (String)cbSearch.getSelectedItem();
         ArrayList<PhuKien> searchList = new ArrayList<>();
-        if(searchOption.equals("Search by Name")){
+        if(searchOption.equals("Tìm kiếm theo tên")){
             for(PhuKien p : list){
                 if(p.getName().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Color")){
+        if(searchOption.equals("Tìm kiếm theo màu sắc")){
             for(PhuKien p : list){
                 if(p.getColor().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Type")){
+        if(searchOption.equals("Tìm kiếm theo loại phụ kiện")){
             for(PhuKien p : list){
                 if(p.getType().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Year")){
+        if(searchOption.equals("Tìm kiếm theo năm")){
             for(PhuKien p : list){
                 if(p.getYear() == Integer.parseInt(searchValue))
                     searchList.add(p);
@@ -509,10 +509,10 @@ public class PhuKienGUI extends javax.swing.JFrame {
     }
 
     public void showComboData() {
-        cbSearch.addItem("Search by Name");
-        cbSearch.addItem("Search by Color");
-        cbSearch.addItem("Search by Type");
-        cbSearch.addItem("Search by Year");
+        cbSearch.addItem("Tìm kiếm theo tên");
+        cbSearch.addItem("Tìm kiếm theo màu sắc");
+        cbSearch.addItem("Tìm kiếm theo loại phụ kiện");
+        cbSearch.addItem("Tìm kiếm theo năm");
     }
 
     /**
