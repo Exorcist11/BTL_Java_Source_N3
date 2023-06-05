@@ -75,15 +75,15 @@ public class PhuKienGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
 
-        jLabel2.setText("Name");
+        jLabel2.setText("Tên");
 
-        jLabel3.setText("Color");
+        jLabel3.setText("Màu sắc");
 
-        jLabel4.setText("Type");
+        jLabel4.setText("Loại phụ kiện");
 
-        jLabel5.setText("Year");
+        jLabel5.setText("Năm");
 
-        jLabel6.setText("Number");
+        jLabel6.setText("Số lượng");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Price");
+        jLabel8.setText("Giá");
 
         btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
