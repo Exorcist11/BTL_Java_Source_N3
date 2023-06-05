@@ -39,6 +39,10 @@ public class GUI_Menu extends javax.swing.JFrame {
         getContentPane().setBackground(new Color(242,242,242));
         setTitle("Menu");
         loadData();
+        btnTK.setEnabled(false);
+        if("Master".equals(GUI_Login.getRole())){
+            btnTK.setEnabled(true);
+        }
     }
 
     /**

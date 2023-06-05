@@ -21,7 +21,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<PhuKien> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "PhuKien.txt";
+    String fileName = "saveTXT/PhuKien.txt";
 
     /**
      * Creates new form PhuKienGUI

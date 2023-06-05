@@ -18,16 +18,14 @@ import javax.swing.JOptionPane;
 //import org.apache.poi.ss.usermodel.Workbook;
 //import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import javax.swing.JTable;
+
 
 /**
  *
  * @author ExorcistV
  */
 public class GUI_ManagerUser extends javax.swing.JFrame {
-    String fileName = "D:user.txt";
+    String fileName = "user.txt";
     File fName = new File("User.xls");
     DBEngine db = new DBEngine();
     User us = new User();

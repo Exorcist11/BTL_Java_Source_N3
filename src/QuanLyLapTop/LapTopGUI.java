@@ -18,7 +18,7 @@ public class LapTopGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<LapTop> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "Laptop.txt";
+    String fileName = "saveTXT/Laptop.txt";
     /**
      * Creates new form LapTopGUI
      */

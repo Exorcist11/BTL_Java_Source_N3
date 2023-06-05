@@ -19,7 +19,7 @@ public class TabletGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<Tablet> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "Tablet.txt";
+    String fileName = "saveTXT/Tablet.txt";
     Tablet tb = new Tablet();
     /**
      * Creates new form LapTopGUI
