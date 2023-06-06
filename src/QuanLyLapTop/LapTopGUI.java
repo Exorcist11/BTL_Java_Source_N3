@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package QuanLyLapTop;
+import Menu.GUI_Menu;
+import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import DBEngine.*;
+
 
 /**
  *
@@ -17,12 +19,16 @@ public class LapTopGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<LapTop> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "E:\\Laptop.txt";
+    String fileName = "saveTXT/Laptop.txt";
+    ExportFileExcel ex = new ExportFileExcel();
+    String fName = "Laptop.xlsx";
     /**
      * Creates new form LapTopGUI
      */
     public LapTopGUI() {
         initComponents();
+        setTitle("Quản lý laptop");
+        getContentPane().setBackground(new Color(242,242,242));
         list = LapTop.generatedLapTop(20);
         initTable();
         displayData(list);
@@ -67,6 +73,7 @@ public class LapTopGUI extends javax.swing.JFrame {
         txtPrice1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtPrice2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,7 +122,7 @@ public class LapTopGUI extends javax.swing.JFrame {
 
         jLabel6.setText("Số");
 
-        btnReset.setText("RESET");
+        btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -136,12 +143,15 @@ public class LapTopGUI extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         cbSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbSearchActionPerformed(evt);
             }
         });
 
+=======
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
         btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +175,11 @@ public class LapTopGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
+<<<<<<< HEAD
         btnBackHome.setText("Trở lại Home");
+=======
+        btnBackHome.setText("BACK HOME");
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
         btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHomeActionPerformed(evt);
@@ -181,6 +195,9 @@ public class LapTopGUI extends javax.swing.JFrame {
         });
 
         jLabel10.setText("Ram");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setText("QUẢN LÝ LAPTOP");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +245,11 @@ public class LapTopGUI extends javax.swing.JFrame {
                                     .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                                     .addComponent(txtPrice, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPrice1, javax.swing.GroupLayout.Alignment.LEADING))))
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE))
+=======
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE))
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,11 +258,17 @@ public class LapTopGUI extends javax.swing.JFrame {
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(360, 360, 360)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel7)
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -290,7 +317,7 @@ public class LapTopGUI extends javax.swing.JFrame {
                             .addComponent(cbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSearch)
                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -322,7 +349,7 @@ public class LapTopGUI extends javax.swing.JFrame {
         LapTop p = new LapTop(id, name, color, type, year, number, cost,chip,ram);
         list.add(p);
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Them thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Thêm thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
     }//GEN-LAST:event_btnAddActionPerformed
@@ -330,12 +357,10 @@ public class LapTopGUI extends javax.swing.JFrame {
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
         try{
-            for(LapTop p: list){
-                file.saveFile(fileName, p);
-            }
+            ex.ExportFileExcel(Table, fName);
         }
         catch(Exception e){
-            e.getMessage();
+            JOptionPane.showConfirmDialog(null, ex.toString());
         }
 
     }//GEN-LAST:event_btnExportActionPerformed
@@ -345,7 +370,7 @@ public class LapTopGUI extends javax.swing.JFrame {
         if (!validData()) {
             return;
         }
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan sua thong tin", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận sửa thông tin", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             emptyField();
             return;
@@ -376,7 +401,7 @@ public class LapTopGUI extends javax.swing.JFrame {
         }
 
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Cap nhat thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
 
@@ -386,18 +411,18 @@ public class LapTopGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         int deleteIndex = Table.getSelectedRow();
         if (deleteIndex == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Chua chon phan tu can xoa!");
+            JOptionPane.showMessageDialog(rootPane, "Chưa chọn phần tử cần xóa!");
             return;
         }
 
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan xoa? ", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận xóa? ", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             return;
         }
         list.remove(deleteIndex);
         displayData(list);
         emptyField();
-        JOptionPane.showMessageDialog(rootPane, "Xoa thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Xóa thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -415,7 +440,7 @@ public class LapTopGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String searchValue = txtSearch.getText().toLowerCase().trim();
         if(searchValue.equals("")){
-            JOptionPane.showMessageDialog(rootPane, "Nhap thong tin can tim kiem","Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Nhập thông tin cần tìm kiếm","Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         String searchOption = (String)cbSearch.getSelectedItem();
@@ -472,6 +497,7 @@ public class LapTopGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPriceActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackHomeActionPerformed
 
@@ -479,6 +505,14 @@ public class LapTopGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbSearchActionPerformed
 
+=======
+        GUI_Menu gui = new GUI_Menu();
+        gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        LapTopGUI.this.dispose();
+    }//GEN-LAST:event_btnBackHomeActionPerformed
+
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
     /**
      * @param args the command line arguments
      */
@@ -513,34 +547,34 @@ public class LapTopGUI extends javax.swing.JFrame {
         if (txtName.getText().equals("") || txtColor.getText().equals("")
                 || txtType.getText().equals("") || txtYear.getText().equals("")
                 || txtNumber.getText().equals("") || txtPrice.getText().equals("")) {
-            JOptionPane.showMessageDialog(rootPane, "Khong duoc de trong du lieu!\n");
+            JOptionPane.showMessageDialog(rootPane, "Không được để trống dữ liệu!\n");
             return false;
         }
 
         StringBuilder sb = new StringBuilder();
         try {
             int year = Integer.parseInt(txtYear.getText());
-            if (year < 2016) {
-                sb.append("Nam phai lon hon 2016\n");
+            if (year < 2000) {
+                sb.append("Năm phải lớn hơn 2000\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Nam phai la so nguyen\n");
+            sb.append("Năm phải là số nguyên\n");
         }
         try {
             int number = Integer.parseInt(txtNumber.getText());
             if (number <= 0) {
-                sb.append("So luong phai lon hon 0\n");
+                sb.append("Số lượng phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("So luong phai la so nguyen\n");
+            sb.append("Số lượng phải là số nguyên\n");
         }
         try {
             int price = Integer.parseInt(txtPrice.getText());
-            if (price < 1000) {
-                sb.append("Gia phai lon hon 1000\n");
+            if (price <= 0) {
+                sb.append("Giá phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Gia phai la so nguyen\n");
+            sb.append("Giá phải là số nguyên\n");
         }
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane, sb.toString(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -603,6 +637,7 @@ public class LapTopGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;

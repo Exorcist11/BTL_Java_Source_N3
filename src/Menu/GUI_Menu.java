@@ -5,6 +5,8 @@
 package Menu;
 
 import DBEngine.DBEngine;
+import QuanLyLapTop.LapTopGUI;
+import QuanLyTablet.TabletGUI;
 import User.GUI_ManagerUser;
 import User.User;
 import java.awt.Color;
@@ -20,8 +22,8 @@ public class GUI_Menu extends javax.swing.JFrame {
     ArrayList<User> listUser;
     DBEngine db = new DBEngine();
     private boolean isAuthenticated = false;
-    private String role;
-    String fileName = "D:user.txt";
+    private String role = GUI_Login.getRole();
+    String fileName = "user.txt";
     /**
      * Creates new form GUI_Menu
      */
@@ -37,6 +39,10 @@ public class GUI_Menu extends javax.swing.JFrame {
         getContentPane().setBackground(new Color(242,242,242));
         setTitle("Menu");
         loadData();
+        btnTK.setEnabled(false);
+        if("Master".equals(GUI_Login.getRole())){
+            btnTK.setEnabled(true);
+        }
     }
 
     /**
@@ -69,6 +75,11 @@ public class GUI_Menu extends javax.swing.JFrame {
         btnLaptop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/laptopLogo.jpg"))); // NOI18N
         btnLaptop.setText("Quản lý laptop");
         btnLaptop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLaptop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLaptopActionPerformed(evt);
+            }
+        });
 
         btnPK.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ramLogo.jpg"))); // NOI18N
@@ -84,6 +95,11 @@ public class GUI_Menu extends javax.swing.JFrame {
         btnTablet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Tablet logo.jpg"))); // NOI18N
         btnTablet.setText("Quản lý Tablet");
         btnTablet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTablet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTabletActionPerformed(evt);
+            }
+        });
 
         btnTK.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UserLogo.png"))); // NOI18N
@@ -131,7 +147,7 @@ public class GUI_Menu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 266, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -144,8 +160,8 @@ public class GUI_Menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnInformation)))
                         .addGap(39, 39, 39))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 227, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(169, 169, 169)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnTK, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPK, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,7 +169,7 @@ public class GUI_Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnTablet, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(149, 149, 149))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,18 +183,17 @@ public class GUI_Menu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTK, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPK, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTablet, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTK, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPK, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTablet, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addComponent(btnLogout))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnInformation, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(54, 54, 54))
         );
@@ -203,30 +218,59 @@ public class GUI_Menu extends javax.swing.JFrame {
         String code = GUI_Login.getUserCode();
         for(User u : listUser) {
             if(code.equals(u.getMaNV())){
-                role = u.getChucVu();
                 isAuthenticated = true;
                 break;
             }
         }
+        try {
+            if(isAuthenticated){
+                if(role.equals("Master")){
+                    GUI_ManagerUser gui = new GUI_ManagerUser();
+                    gui.setVisible(true);
+                    gui.setLocationRelativeTo(null);
+                    GUI_Menu.this.dispose(); 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tài khoản master mới có thể truy cập!","Error",JOptionPane.INFORMATION_MESSAGE);
+                }         
+            } 
+        } catch(Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
         
-        if(isAuthenticated){
-            if(role.equals("Master")){
-                GUI_ManagerUser gui = new GUI_ManagerUser();
-                gui.setVisible(true);
-                gui.setLocationRelativeTo(null);
-                GUI_Menu.this.dispose(); 
-            } else {
-                JOptionPane.showMessageDialog(null, "Tài khoản master mới có thể truy cập!","Error",JOptionPane.INFORMATION_MESSAGE);
-            }         
-        } 
     }//GEN-LAST:event_btnTKActionPerformed
 
     private void btnPKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPKActionPerformed
-        PhuKienGUI gui = new PhuKienGUI();
-        gui.setVisible(true);
-        gui.setLocationRelativeTo(null);
-        GUI_Menu.this.dispose();
+        try {
+            PhuKienGUI gui = new PhuKienGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch(Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnPKActionPerformed
+
+    private void btnLaptopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaptopActionPerformed
+        try {
+            LapTopGUI gui = new LapTopGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch (Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLaptopActionPerformed
+
+    private void btnTabletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTabletActionPerformed
+        try {
+            TabletGUI gui = new TabletGUI();
+            gui.setVisible(true);
+            gui.setLocationRelativeTo(null);
+            GUI_Menu.this.dispose();
+        } catch (Exception err) {
+            JOptionPane.showMessageDialog(null, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnTabletActionPerformed
 
     /**
      * @param args the command line arguments

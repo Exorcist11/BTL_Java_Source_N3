@@ -92,7 +92,7 @@ public class PhuKien {
 
     @Override
     public String toString() {
-        return "ID: "+id+"Model: "+name+"Color: "+color+"Type: "+type+"Year: "+year+"Number: "+number+"Price: "+price;
+        return "ID: "+id+"\tModel: "+name+"\tColor: "+color+"\tType: "+type+"\tYear: "+year+"\tNumber: "+number+"\tPrice: "+price+"\n";
     }
     
     public static ArrayList<PhuKien> generatedPhuKien(int n){

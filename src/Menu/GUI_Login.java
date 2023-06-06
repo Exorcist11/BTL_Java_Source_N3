@@ -16,18 +16,21 @@ import javax.swing.JOptionPane;
  */
 public class GUI_Login extends javax.swing.JFrame {
     ArrayList<User> listUser;
+    
     private static String userCode;
     private static String userName;
+    private static String role;
     /**
      * Creates new form GUI_Login
      */
     public void readData(){
         DBEngine db = new DBEngine();
         String fileName = "user.txt";
+
         try {
             listUser = (ArrayList<User>) db.readFile(fileName);
         } catch (Exception err) {
-            System.out.println(err.toString());
+            JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.INFORMATION_MESSAGE);
         }
     }
     
@@ -36,6 +39,7 @@ public class GUI_Login extends javax.swing.JFrame {
         getContentPane().setBackground(new Color(242,242,242));
         setTitle("Login");
         readData();
+        
         
     }
 
@@ -138,18 +142,24 @@ public class GUI_Login extends javax.swing.JFrame {
             if(acc.equals(o.getTaiKhoan()) && pass.equals(o.getMatKhau())){
                 userCode = o.getMaNV();
                 userName = o.getHoTen();
+                role = o.getChucVu();
                 isAuthenticated = true;
                 break;
             }
         }
         
-        if(isAuthenticated) {
-            GUI_Menu gui = new GUI_Menu();
-            gui.setVisible(true);
-            gui.setLocationRelativeTo(null);
-            GUI_Login.this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
+        try {
+            if(isAuthenticated) {
+                GUI_Menu gui = new GUI_Menu();
+                gui.setVisible(true);
+                gui.setLocationRelativeTo(null);
+                GUI_Login.this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Tài khoản, mật khẩu không đúng!","Error",JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception err) {
+            //System.out.println(err.toString());
+            JOptionPane.showMessageDialog(this, "Lỗi đăng nhập!","Error",JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -160,6 +170,12 @@ public class GUI_Login extends javax.swing.JFrame {
     public static String getUserName() {
         return userName;
     }
+
+    public static String getRole() {
+        return role;
+    }
+    
+    
 
     /**
      * @param args the command line arguments

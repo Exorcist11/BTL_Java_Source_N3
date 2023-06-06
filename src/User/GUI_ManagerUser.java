@@ -4,32 +4,29 @@
  */
 package User;
 
-import DBEngine.DBEngine;
+import DBEngine.*;
 import Menu.GUI_Menu;
 import java.awt.Color;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-//import org.apache.poi.hssf.usermodel.HSSFFont;
-//import org.apache.poi.ss.usermodel.Cell;
-//import org.apache.poi.ss.usermodel.Row;
-//import org.apache.poi.ss.usermodel.Sheet;
-//import org.apache.poi.ss.usermodel.Workbook;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import java.io.File;
-import java.io.FileOutputStream;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.IOException;
-import javax.swing.JTable;
+
+
 
 /**
  *
  * @author ExorcistV
  */
 public class GUI_ManagerUser extends javax.swing.JFrame {
-    String fileName = "D:user.txt";
-    File fName = new File("User.xls");
+    String fileName = "user.txt";
+    String fName = "User.xlsx";
     DBEngine db = new DBEngine();
+    ExportFileExcel ex = new ExportFileExcel();
     User us = new User();
     ArrayList<User> listUser = new ArrayList<>();
     
@@ -45,36 +42,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         tableUser.setModel(new TableUser(listUser));
     }
     
-//    Workbook workbook = new XSSFWorkbook(); // tạo mới đối tượng đại diện cho excel.
-//    Sheet sheet = (Sheet) workbook.createSheet("User"); // tạo 1 đối tượng sheet, đại diện cho sheet bên trong file Excel
-//    public void ExportFileExcel(JTable table) throws IOException {
-//
-//        // tạo tên cột 
-//        Row headerRow = sheet.createRow(0);
-//        for (int i = 0; i < table.getColumnCount(); i++) {
-//            Cell headerCell = headerRow.createCell(i);
-//            headerCell.setCellValue(table.getColumnName(i));
-//            // tạo font chữ đận cho tên cột 
-//            org.apache.poi.ss.usermodel.Font font = workbook.createFont();
-//            font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
-//            org.apache.poi.ss.usermodel.CellStyle style = workbook.createCellStyle();
-//            style.setFont(font);
-//            headerCell.setCellStyle(style);
-//        }
-//
-//        // thêm dữ liệu trong jtable vào trong file
-//        for (int i = 0; i < table.getRowCount(); i++) {
-//            Row row = sheet.createRow(i + 1);
-//            for (int j = 0; j < table.getColumnCount(); j++) {
-//                Cell cell = row.createCell(j);
-//                cell.setCellValue(table.getValueAt(i, j).toString());
-//            }
-//        }
-//        FileOutputStream fileOut = new FileOutputStream("San_Pham.xlsx");
-//        workbook.write(fileOut);
-//        fileOut.close();
-//        JOptionPane.showMessageDialog(null, "Đã xuất ra file: San_Pham.xlsx");
-//    }
     /**
      * Creates new form GUI_ManagerUser
      */
@@ -122,10 +89,10 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         chucVu = new javax.swing.JComboBox<>();
-        btnExport = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         backMenu = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
+        btnExport = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -139,6 +106,12 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         cbxSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSearchActionPerformed(evt);
+            }
+        });
+
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
             }
         });
 
@@ -212,8 +185,6 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
-        btnExport.setText("Xuất .xsls");
-
         btnUpdate.setText("Sửa");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,6 +207,13 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
+        btnExport.setText("Export .xlsx");
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -243,22 +221,19 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
+                                .addGap(67, 67, 67)
                                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
+                                .addGap(63, 63, 63)
                                 .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(54, 54, 54)
                                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(84, 84, 84)
+                                .addGap(48, 48, 48)
+                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
                                 .addComponent(backMenu))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
@@ -302,7 +277,10 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                                             .addComponent(jLabel9)
                                             .addGap(18, 18, 18)
                                             .addComponent(chucVu, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(jScrollPane1)))))
+                                .addComponent(jScrollPane1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel1)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -342,11 +320,11 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
-                    .addComponent(btnExport)
                     .addComponent(btnUpdate)
                     .addComponent(btnDel)
                     .addComponent(backMenu)
-                    .addComponent(btnReset))
+                    .addComponent(btnReset)
+                    .addComponent(btnExport))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -388,13 +366,22 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                             listUser.add(user);
                             db.saveFile(fileName, listUser);
                             loadTable(listUser);
+                            JOptionPane.showMessageDialog(null, "Thêm tài khoản thành công!");
                             break;
                         }
                     }
+                    maNV.setText("");
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setText("");
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
+                    search.setText("");
                 }
             }
         } catch (Exception err) {
-            //System.out.println(err.toString());
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddActionPerformed
@@ -414,17 +401,18 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
                     listUser.remove(del);
                     db.saveFile(fileName, listUser);
                     loadTable(listUser);
+                    JOptionPane.showMessageDialog(this, "Xoá thành công!","Information",JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    maNV.setEnabled(true);
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setText("");
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
                 }
-            }
-            maNV.setEnabled(true);
-            maNV.setText("");
-            hoTen.setText("");
-            sdt.setText("");
-            tk.setText("");
-            mk.setText("");
-            queQuan.setText("");
-            ngaySinh.setText("");
-            JOptionPane.showMessageDialog(this, "Xoá thành công!","Information",JOptionPane.INFORMATION_MESSAGE);
+            }            
         } catch (Exception err) {
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
             //System.out.println(err.toString());
@@ -437,27 +425,32 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             if(update == -1) {
                 JOptionPane.showMessageDialog(this, " Chọn tài khoản cần Cập nhật","Error",JOptionPane.ERROR_MESSAGE);
             } else {
-                us = listUser.get(update);
-                us.setHoTen(hoTen.getText());
-                us.setSoDienThoai(sdt.getText());
-                us.setNgaySinh(ngaySinh.getText());
-                us.setQueQuan(queQuan.getText());
-                us.setTaiKhoan(tk.getText());
-                us.setMatKhau(mk.getText());
-                us.setChucVu(chucVu.getSelectedItem().toString());
-                listUser.set(update, us);
-                JOptionPane.showMessageDialog(this, "Cập nhật tài thông tin thành công!","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-                db.saveFile(fileName, listUser);
-                loadTable(listUser);
+                int confirm = JOptionPane.showConfirmDialog(this,"Xác nhận cập nhật tài khoản","Xác nhận",JOptionPane.YES_NO_OPTION);
+                if(confirm == JOptionPane.YES_OPTION){
+                    us = listUser.get(update);
+                    us.setHoTen(hoTen.getText());
+                    us.setSoDienThoai(sdt.getText());
+                    us.setNgaySinh(ngaySinh.getText());
+                    us.setQueQuan(queQuan.getText());
+                    us.setTaiKhoan(tk.getText());
+                    us.setMatKhau(mk.getText());
+                    us.setChucVu(chucVu.getSelectedItem().toString());
+                    listUser.set(update, us);
+                    db.saveFile(fileName, listUser);
+                    loadTable(listUser);
+                    JOptionPane.showMessageDialog(this, "Cập nhật tài thông tin thành công!","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    maNV.setEnabled(true);
+                    maNV.setText("");
+                    hoTen.setText("");
+                    sdt.setText("");
+                    tk.setEnabled(true);
+                    mk.setText("");
+                    queQuan.setText("");
+                    ngaySinh.setText("");
+                }
             }
-            maNV.setEnabled(true);
-            maNV.setText("");
-            hoTen.setText("");
-            sdt.setText("");
-            tk.setText("");
-            mk.setText("");
-            queQuan.setText("");
-            ngaySinh.setText("");
+            
         } catch (Exception err) {
             JOptionPane.showMessageDialog(this, err.toString(),"Error",JOptionPane.ERROR_MESSAGE);
             //System.out.println(err.toString());
@@ -474,6 +467,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
     private void tableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableUserMouseClicked
         int selected = tableUser.getSelectedRow();
         maNV.setEnabled(false);
+        tk.setEnabled(false);
         if(selected != -1) {
             us = listUser.get(selected);
             maNV.setText(us.getMaNV());
@@ -491,20 +485,24 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         String typeSearch = cbxSearch.getSelectedItem().toString();
         String src = search.getText();
         ArrayList<User> searchTable = new ArrayList<>();
-        if(typeSearch.equals("Tìm theo tên")){
-            for(User o: listUser) {
-                if(src.toLowerCase().equals(o.getHoTen().toLowerCase().trim())){
-                    searchTable.add(o);
-                }
-            }
+        if(src.equals("")){
+            JOptionPane.showMessageDialog(this, "Nội dung nhập không được để trống","Error",JOptionPane.ERROR_MESSAGE);
         } else {
-            for(User u: listUser) {
-                if(src.toLowerCase().equals(u.getMaNV().toLowerCase().trim())){
-                    searchTable.add(u);
+            if(typeSearch.equals("Tìm theo tên")){
+                for(User o: listUser) {
+                    if(src.toLowerCase().equals(o.getHoTen().toLowerCase().trim())){
+                        searchTable.add(o);
+                    }
+                }
+            } else {
+                for(User u: listUser) {
+                    if(src.toLowerCase().equals(u.getMaNV().toLowerCase().trim())){
+                        searchTable.add(u);
+                    }
                 }
             }
+            loadTable(searchTable);
         }
-        loadTable(searchTable);
     }//GEN-LAST:event_btnSearhActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -519,6 +517,20 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         search.setText("");
         loadTable(listUser);
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
+
+    Workbook workbook = new XSSFWorkbook(); // tạo mới đối tượng đại diện cho excel.
+    Sheet sheet = (Sheet) workbook.createSheet(fName); // tạo 1 đối tượng sheet, đại diện cho sheet bên trong file Excel
+    private void exportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportExcelActionPerformed
+        try {
+            ex.ExportFileExcel(tableUser, fName);
+        } catch (IOException ex) {
+            JOptionPane.showConfirmDialog(null, ex.toString());
+        }
+    }//GEN-LAST:event_exportExcelActionPerformed
 
     /**
      * @param args the command line arguments

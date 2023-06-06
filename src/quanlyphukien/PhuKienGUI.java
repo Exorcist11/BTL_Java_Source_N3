@@ -4,28 +4,31 @@
  */
 package quanlyphukien;
 
+import Menu.GUI_Menu;
+import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import DBEngine.*;
 /**
  *
  * @author pc2
  */
 public class PhuKienGUI extends javax.swing.JFrame {
-
     DefaultTableModel tableModel = new DefaultTableModel();
     public static ArrayList<PhuKien> list = new ArrayList<>();
     DBEngine file = new DBEngine();
-    String fileName = "E:\\PhuKien.txt";
+    String fileName = "saveTXT/PhuKien.txt";
+    String fName = "PhuKien.xlsx";
+    ExportFileExcel ex = new ExportFileExcel();
 
     /**
      * Creates new form PhuKienGUI
      */
     public PhuKienGUI() {
         initComponents();
+        getContentPane().setBackground(new Color(242,242,242));
+        setTitle("Quản lý phụ kiện");
         list = PhuKien.generatedPhuKien(20);
         initTable();
         displayData(list);
@@ -66,19 +69,20 @@ public class PhuKienGUI extends javax.swing.JFrame {
         btnBackHome = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnExport = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
 
-        jLabel2.setText("Name");
+        jLabel2.setText("Tên");
 
-        jLabel3.setText("Color");
+        jLabel3.setText("Màu sắc");
 
-        jLabel4.setText("Type");
+        jLabel4.setText("Loại phụ kiện");
 
-        jLabel5.setText("Year");
+        jLabel5.setText("Năm");
 
-        jLabel6.setText("Number");
+        jLabel6.setText("Số lượng");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,36 +106,37 @@ public class PhuKienGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
-        btnAdd.setText("ADD");
+        btnAdd.setText("Thêm");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnEdit.setText("EDIT");
+        btnEdit.setText("Sửa");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
-        btnDelete.setText("DELETE");
+        btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        btnReset.setText("RESET");
+        btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("Price");
+        jLabel8.setText("Giá");
 
+<<<<<<< HEAD
         cbSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbSearchActionPerformed(evt);
@@ -139,27 +144,38 @@ public class PhuKienGUI extends javax.swing.JFrame {
         });
 
         btnSearch.setText("SEARCH");
+=======
+        btnSearch.setText("Tìm kiếm");
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
 
-        btnBackHome.setText("BACK HOME");
+        btnBackHome.setText("VỀ MENU");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackHomeActionPerformed(evt);
+            }
+        });
 
-        btnExit.setText("EXIT");
+        btnExit.setText("THOÁT");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
 
-        btnExport.setText("EXPORT FILE");
+        btnExport.setText("Xuất file");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("QUẢN LÝ PHỤ KIỆN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,11 +227,17 @@ public class PhuKienGUI extends javax.swing.JFrame {
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(385, 385, 385)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -256,7 +278,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
                             .addComponent(cbSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSearch)
                             .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,7 +289,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void initTable() {
-        String[] columns = {"ID", "Name", "Color", "Type", "Year", "Number", "Cost"};
+        String[] columns = {"ID", "Tên", "Màu sắc", "Loại phụ kiện", "Năm", "Số lượng", "Giá"};
         tableModel.setColumnIdentifiers(columns);
         Table.setModel(tableModel);
 
@@ -312,7 +334,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         PhuKien p = new PhuKien(id, name, color, type, year, number, cost);
         list.add(p);
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Them thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Thêm thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
     }//GEN-LAST:event_btnAddActionPerformed
@@ -321,18 +343,18 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         int deleteIndex = Table.getSelectedRow();
         if (deleteIndex == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Chua chon phan tu can xoa!");
+            JOptionPane.showMessageDialog(rootPane, "Chưa chọn phần tử cần xóa!");
             return;
         }
         
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan xoa? ", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận xóa? ", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             return;
         }
         list.remove(deleteIndex);
         displayData(list);
         emptyField();
-        JOptionPane.showMessageDialog(rootPane, "Xoa thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Xóa thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -341,7 +363,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         if (!validData()) {
             return;
         }
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Xac nhan sua thong tin", "Question", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Xác nhận sửa thông tin", "Question", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION || choice == JOptionPane.CLOSED_OPTION) {
             emptyField();
             return;
@@ -368,7 +390,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
         }
 
         displayData(list);
-        JOptionPane.showMessageDialog(rootPane, "Cap nhat thanh cong", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công", "Successful", JOptionPane.INFORMATION_MESSAGE);
 
         emptyField();
 
@@ -390,30 +412,30 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String searchValue = txtSearch.getText().toLowerCase().trim();
         if(searchValue.equals("")){
-            JOptionPane.showMessageDialog(rootPane, "Nhap thong tin can tim kiem","Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Nhập thông tin cần tìm kiếm","Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         String searchOption = (String)cbSearch.getSelectedItem();
         ArrayList<PhuKien> searchList = new ArrayList<>();
-        if(searchOption.equals("Search by Name")){
+        if(searchOption.equals("Tìm kiếm theo tên")){
             for(PhuKien p : list){
                 if(p.getName().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Color")){
+        if(searchOption.equals("Tìm kiếm theo màu sắc")){
             for(PhuKien p : list){
                 if(p.getColor().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Type")){
+        if(searchOption.equals("Tìm kiếm theo loại phụ kiện")){
             for(PhuKien p : list){
                 if(p.getType().toLowerCase().equals(searchValue))
                     searchList.add(p);
             }
         }
-        if(searchOption.equals("Search by Year")){
+        if(searchOption.equals("Tìm kiếm theo năm")){
             for(PhuKien p : list){
                 if(p.getYear() == Integer.parseInt(searchValue))
                     searchList.add(p);
@@ -432,12 +454,10 @@ public class PhuKienGUI extends javax.swing.JFrame {
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
         try{
-            for(PhuKien p: list){
-                file.saveFile(fileName, p);
-            }
+            ex.ExportFileExcel(Table, fName);
         }
         catch(Exception e){
-            e.getMessage();
+            JOptionPane.showConfirmDialog(null, ex.toString());
         }
         
         
@@ -447,42 +467,51 @@ public class PhuKienGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
+<<<<<<< HEAD
     private void cbSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbSearchActionPerformed
+=======
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        GUI_Menu gui = new GUI_Menu();
+        gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        PhuKienGUI.this.dispose();
+    }//GEN-LAST:event_btnBackHomeActionPerformed
+>>>>>>> 7a1350df6dc181bd8101aa55a50748d199d0cf9e
 
     public boolean validData() {
         if (txtName.getText().equals("") || txtColor.getText().equals("")
                 || txtType.getText().equals("") || txtYear.getText().equals("")
                 || txtNumber.getText().equals("") || txtPrice.getText().equals("")) {
-            JOptionPane.showMessageDialog(rootPane, "Khong duoc de trong du lieu!\n");
+            JOptionPane.showMessageDialog(rootPane, "Không được để trống dữ liệu!\n");
             return false;
         }
 
         StringBuilder sb = new StringBuilder();
         try {
             int year = Integer.parseInt(txtYear.getText());
-            if (year < 2016) {
-                sb.append("Nam phai lon hon 2016\n");
+            if (year < 2000) {
+                sb.append("Năm phải lớn hơn 2000\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Nam phai la so nguyen\n");
+            sb.append("Năm phải là số nguyên\n");
         }
         try {
             int number = Integer.parseInt(txtNumber.getText());
             if (number <= 0) {
-                sb.append("So luong phai lon hon 0\n");
+                sb.append("Số lượng phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("So luong phai la so nguyen\n");
+            sb.append("Số lượng phải là số nguyên\n");
         }
         try {
             int price = Integer.parseInt(txtPrice.getText());
-            if (price < 1000) {
-                sb.append("Gia phai lon hon 1000\n");
+            if (price <= 0) {
+                sb.append("Giá phải lớn hơn 0\n");
             }
         } catch (NumberFormatException e) {
-            sb.append("Gia phai la so nguyen\n");
+            sb.append("Giá phải là số nguyên\n");
         }
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane, sb.toString(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -492,10 +521,10 @@ public class PhuKienGUI extends javax.swing.JFrame {
     }
 
     public void showComboData() {
-        cbSearch.addItem("Search by Name");
-        cbSearch.addItem("Search by Color");
-        cbSearch.addItem("Search by Type");
-        cbSearch.addItem("Search by Year");
+        cbSearch.addItem("Tìm kiếm theo tên");
+        cbSearch.addItem("Tìm kiếm theo màu sắc");
+        cbSearch.addItem("Tìm kiếm theo loại phụ kiện");
+        cbSearch.addItem("Tìm kiếm theo năm");
     }
 
     /**
@@ -544,6 +573,7 @@ public class PhuKienGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbSearch;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
