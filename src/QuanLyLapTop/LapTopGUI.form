@@ -24,75 +24,68 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnReset" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnAdd" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbSearch" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnDelete" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btnExport" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txtSearch" min="-2" pref="144" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtPrice2" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtNumber" alignment="0" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtYear" alignment="0" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtType" alignment="0" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtColor" alignment="0" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtName" alignment="0" pref="180" max="32767" attributes="0"/>
-                                  <Component id="txtPrice" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtPrice1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnBackHome" min="-2" pref="139" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnExit" min="-2" pref="139" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnBackHome" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="btnExit" min="-2" pref="151" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="360" max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cbSearch" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnReset" pref="85" max="32767" attributes="0"/>
+                          <Component id="btnAdd" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnEdit" min="-2" pref="85" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnExport" min="-2" pref="85" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtSearch" min="-2" pref="144" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnDelete" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="txtPrice2" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtNumber" alignment="0" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtYear" alignment="0" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtType" alignment="0" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtColor" alignment="0" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtName" alignment="0" pref="180" max="32767" attributes="0"/>
+                          <Component id="txtPrice" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPrice1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="485" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -176,12 +169,12 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name"/>
+        <Property name="text" type="java.lang.String" value="T&#xea;n"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="EXIT"/>
+        <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
@@ -189,7 +182,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Color"/>
+        <Property name="text" type="java.lang.String" value="M&#xe0;u s&#x1eaf;c"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
@@ -210,7 +203,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Type"/>
+        <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i Laptop"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEdit">
@@ -223,7 +216,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Year"/>
+        <Property name="text" type="java.lang.String" value="N&#x103;m s&#x1ea3;n xu&#x1ea5;t"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnDelete">
@@ -236,7 +229,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Number"/>
+        <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnReset">
@@ -254,7 +247,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Price"/>
+        <Property name="text" type="java.lang.String" value="Gi&#xe1;"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtColor">
@@ -315,7 +309,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnBackHome">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BACK HOME"/>
+        <Property name="text" type="java.lang.String" value="Quay v&#x1ec1; m&#xe0;n h&#xec;nh ch&#xed;nh"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackHomeActionPerformed"/>
