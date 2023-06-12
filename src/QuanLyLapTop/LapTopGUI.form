@@ -266,9 +266,6 @@
           <StringArray count="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbSearchActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -312,7 +309,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnBackHome">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Quay v&#x1ec1; m&#xe0;n h&#xec;nh ch&#xed;nh"/>
+        <Property name="text" type="java.lang.String" value="V&#x1ec1; m&#xe0;n h&#xec;nh ch&#xed;nh"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackHomeActionPerformed"/>

@@ -340,7 +340,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="D:\Java\BTL_JAVA_N3\N3_Application\src\img\turnback.jpg"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Back to Menu"/>
+        <Property name="text" type="java.lang.String" value="V&#x1ec1; m&#xe0;n h&#xec;nh ch&#xed;nh"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backMenuActionPerformed"/>
@@ -356,7 +356,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnExport">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Export .xlsx"/>
+        <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t Excel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportExcelActionPerformed"/>

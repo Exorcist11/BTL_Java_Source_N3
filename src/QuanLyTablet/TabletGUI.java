@@ -14,7 +14,7 @@ import DBEngine.*;
 
 /**
  *
- * @author PCLENOVO
+ * @author D.Exorcist
  */
 public class TabletGUI extends javax.swing.JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
@@ -82,7 +82,7 @@ public class TabletGUI extends javax.swing.JFrame {
 
         jLabel2.setText("Tên sản phẩm");
 
-        btnExit.setText("EXIT");
+        btnExit.setText("Thoát");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -176,7 +176,7 @@ public class TabletGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
-        btnBackHome.setText("BACK HOME");
+        btnBackHome.setText("Về màn hình chính");
         btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHomeActionPerformed(evt);

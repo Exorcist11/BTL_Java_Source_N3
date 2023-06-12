@@ -193,7 +193,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         });
 
         backMenu.setIcon(new javax.swing.ImageIcon("D:\\Java\\BTL_JAVA_N3\\N3_Application\\src\\img\\turnback.jpg")); // NOI18N
-        backMenu.setText("Back to Menu");
+        backMenu.setText("Về màn hình chính");
         backMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backMenuActionPerformed(evt);
@@ -207,7 +207,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
             }
         });
 
-        btnExport.setText("Export .xlsx");
+        btnExport.setText("Xuất Excel");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportExcelActionPerformed(evt);
@@ -351,7 +351,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
 
         User user = new User(userCode, userName, phoneNumber, dateBirth, address, account, password, role);
         try {
-            if(userCode.equals(" ") || userName.equals(" ") || phoneNumber.equals(" ") || dateBirth.equals(" ") || address.equals(" ") || account.equals(" ") || password.equals(" ")) {
+            if(userCode.equals("") || userName.equals("") || phoneNumber.equals("") || dateBirth.equals("") || address.equals("") || account.equals("") || password.equals("")) {
                     JOptionPane.showMessageDialog(null, "Vui lòng nhập đủ thông tin", "Error", JOptionPane.WARNING_MESSAGE);
             } else {
                 if(listUser.contains(user)){
@@ -511,6 +511,7 @@ public class GUI_ManagerUser extends javax.swing.JFrame {
         hoTen.setText("");
         sdt.setText("");
         tk.setText("");
+        tk.setEnabled(true);
         mk.setText("");
         queQuan.setText("");
         ngaySinh.setText("");
